@@ -14,12 +14,12 @@ let pontuacion = score.innerText = "Score: " + points;
 // const ball5 = document.querySelector('#ball5');
 // const ball6 = document.querySelector('#ball6');
 
-// function backgroundColor () {
-//     const r = (Math.round(Math.random() * 255)).toString();
-//     const g = (Math.round(Math.random() * 255)).toString();
-//     const b = (Math.round(Math.random() * 255)).toString();
-//     return ('(' + r + ', ' + g + ', ' + b + ')');
-// }
+function backgroundColor () {
+    const r = (Math.round(Math.random() * 255)).toString();
+    const g = (Math.round(Math.random() * 255)).toString();
+    const b = (Math.round(Math.random() * 255)).toString();
+    return ('(' + r + ', ' + g + ', ' + b + ')');
+}
 
 // ball1.style.backgroundColor = "rgb" + backgroundColor();
 // ball2.style.backgroundColor = "rgb" + backgroundColor();
@@ -30,16 +30,16 @@ let pontuacion = score.innerText = "Score: " + points;
 
 
 //Requisito 4
-function backgroundColor () {
-    //https://www.codegrepper.com/code-examples/javascript/generate+random+rgb+color+javascript
-    let r = () => Math.random() * 256 >> 0;
-    let randomColor = `rgb(${r()}, ${r()}, ${r()})`;
-    return randomColor;
-}
+// function backgroundColor () {
+//     //https://www.codegrepper.com/code-examples/javascript/generate+random+rgb+color+javascript
+//     let r = () => Math.random() * 256 >> 0;
+//     let randomColor = `rgb(${r()}, ${r()}, ${r()})`;
+//     return randomColor;
+// }
 
 function ballColor () { 
     for (let i of ball) {
-        i.style.backgroundColor = backgroundColor();
+        i.style.backgroundColor = "rgb" + backgroundColor();
     }
 }
 
@@ -79,8 +79,6 @@ function resetGame() {
 }
 
 resetButton.addEventListener('click', resetGame);
-
-//Requisito 7
 
 
 //Referências
