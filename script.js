@@ -1,8 +1,11 @@
 const rgbColor = document.querySelector('#rgb-color');
 const ball = document.getElementsByClassName('ball');
 const answer = document.querySelector('#answer');
-const resetButton = document.querySelector('#reset-game')
+const resetButton = document.querySelector('#reset-game');
+const score = document.querySelector('#score');
 
+let points = 0;
+let pontuacion = score.innerText = "Score: " + points;
 
 // const ball1 = document.querySelector('#ball1');
 // const ball2 = document.querySelector('#ball2');
@@ -54,6 +57,8 @@ choosenColor();
 function answerCheck (event) {
     if (event.target.style.backgroundColor === rgbColor.innerText) {
         answer.innerText = "Acertou!";
+        points += 3;
+        let pontuacion = score.innerText = "Score: " + points;
         ballColor();
         choosenColor();
     } else {
@@ -66,14 +71,17 @@ for (let i of ball) {
 }
 
 //Requisito 6
-
 function resetGame() {
     answer.innerText = "Escolha uma cor"
     ballColor();
     choosenColor();
+    score.innerText = "Score: " + 0;
 }
 
 resetButton.addEventListener('click', resetGame);
+
+//Requisito 7
+
 
 //Referências
 //Código de Matheus Gomes: https://github.com/tryber/sd-019-c-project-color-guess/pull/2/files
