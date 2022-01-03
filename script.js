@@ -61,8 +61,8 @@ function resetGame() {
     answer.innerText = "Escolha uma cor"
     ballColor();
     choosenColor();
-    points = 0;
-    let pontuacion = score.innerText = "Score: " + points;
+    // points = 0;
+    // let pontuacion = score.innerText = "Score: " + points;
 }
 
 resetButton.addEventListener('click', resetGame);
